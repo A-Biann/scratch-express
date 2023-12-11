@@ -1,4 +1,4 @@
-const createConnection = require('../utils/db');
+const createConnection = require('../server/utils/db');
 
 const roleSearch = async (role) => {
     try {
