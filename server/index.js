@@ -5,10 +5,12 @@ import doctorRoutes from './routes/doctor.js';
 import csvRoutes from './utils/csv.js';
 import influxdbRoutes from './utils/influxdb.js';
 import watchRoutes from './utils/watch.js';
+import cors from 'cors';
 
 const app = express();
 const port = 3000; // default port to listen
 app.use(express.json());
+app.use(cors());
 
 app.use('/1.0/doctor', doctorRoutes);
 app.use('/1.0/user', userRoutes);

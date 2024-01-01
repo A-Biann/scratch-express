@@ -14,15 +14,14 @@ services:
       - INFLUX_ORG=${INFLUX_ORG}
       - INFLUX_BUCKET=${INFLUX_BUCKET}
 
-  # frontend:
-  #   image: tzuhsun/stylish-frontend
-  #   container_name: stylish-frontend
-  #   ports:
-  #     - "3000:3000"
-  #   environment:
-  #     - REACT_APP_API_BASE_URL=https://tzuhsun.online/api
-  #   networks:
-  #     - network
+  client:
+    build:
+      context: ./client
+    container_name: client
+    ports:
+      - "5000:5000"
+    networks:
+      - network
 
   nginx:
     restart: unless-stopped
